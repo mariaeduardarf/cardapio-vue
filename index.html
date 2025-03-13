@@ -112,6 +112,33 @@
                                     Molhos
                                 </div>
 
+                                <div class="card-body">
+
+                                    <div class="form-check form-check-inline">
+
+                                        <input type="checkbox" class="form-check-input" value="ketchup" v-model="inputMolhos">
+                                        <label class="form-check-label"> Ketchup </label>
+
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+
+                                        <input type="checkbox" class="form-check-input" value="mostarda" v-model="inputMolhos">
+                                        <label class="form-check-label"> Mostarda </label>
+
+                                    </div>
+
+                                    <div class="form-check form-check-inline">
+
+                                        <input type="checkbox" class="form-check-input" value="maionese" v-model="inputMolhos">
+
+                                        <label class="form-check-label"> Maionese </label>
+
+                                    </div>
+
+                                </div><!-- fim card body -->
+                             
+
                             </div>
                         </div>
                      </div>
@@ -136,7 +163,7 @@
             data: {  // atributos // propriedades
                 inputTipoPao: '',
                 inputSalada:[],
-
+                inputMolhos:[],
 
                 etapa: 1,
                 
@@ -163,6 +190,35 @@
 
                     return 'imagens/padrao/alface.png'
 
+                },
+
+
+                ketchup () {
+
+                    if (this.inputMolhos.includes('ketchup')) {
+                        return 'imagens/ketchup.png'
+                    }
+                    return 'imagens/padrao/molho.png'
+                    
+                },
+
+                mostarda () {
+
+                    if (this.inputMolhos.includes('mostarda')) {
+                        return 'imagens/mostarda.png'
+                    }
+                    return 'imagens/padrao/molho.png'
+                    
+                },
+                
+
+                 maionese () {
+
+                    if (this.inputMolhos.includes('maionese')) {
+                        return 'imagens/maionese.png'
+                    }
+                    return 'imagens/padrao/molho.png'
+                    
                 },
                 
             },

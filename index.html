@@ -200,16 +200,31 @@
                         <div class="col d-flex justify-content-end">
                             
                             
-                        <button class="btn btn-primary">
+                        <button class="btn btn-primary" type="button" @click="fazerPedido()">
                             Fazer o Pedido
                         </button>
-                        
                         </div>
-
                     </div>
                     
-                </div> <!--fim etapa 1-->
-                <!-- Fim col md -->
+                </div> <!--fim etapa 1--> <!-- Fim col md -->
+
+                <div class="col-md-6" v-if="etapa == 2">
+                    <div class="row mt-2">
+                        <div class="col">
+                            <div class="card">
+
+                                Informe os seus dados 
+
+                                Nome 
+
+                                Mesa
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
 
 
 
@@ -299,6 +314,20 @@
                   }  
                 },
 
+            },
+
+            methods: {
+                fazerPedido() {
+                  //se Pão e carne forem selecionados
+                  if(this.inputTipoPao && this.inputBurger) {
+                    this.etapa = 2
+                    // avaça para etapa 2 
+                  } 
+                    else {  
+                        alert('Você precisa selecionar no minimo um pão e uma carne')
+                  }
+
+                }
             },
 
 

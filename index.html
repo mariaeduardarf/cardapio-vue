@@ -294,7 +294,7 @@
                         <div class="col d-flex justify-content-between">
 
                             <!-- botão 1 Repetir o pedido-->
-                            <button class="btn btn-primary" type="button" @click="Etapa = 1"> Repetir Pedido</button>
+                            <button class="btn btn-primary" type="button" @click="etapa = 1"> Repetir Pedido</button>
 
 
                             <!-- botão 2 Repetir o pedido-->
@@ -325,7 +325,8 @@
                 inputBurger: '',
 
                 inputNome: '',
-                inputMesa: '',                          
+                inputMesa: '',   
+                novoPedidoAssincrono: null                       
 
             },
 
@@ -434,6 +435,14 @@
                     this.inputMesa = ''
 
                 },
+            },
+            watch: {
+                etapa(novoValor) {
+                    if (novoValor == 1) {
+                        clearTimeout(this.novoPedidoAssincrono)
+                    }
+                }
+
             },
         })
     </script>
